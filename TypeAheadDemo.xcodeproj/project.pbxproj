@@ -21,6 +21,7 @@
 		C9BDA931234C222D00A08B01 /* EventDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDA930234C222D00A08B01 /* EventDetailRow.swift */; };
 		C9BDA933234C298000A08B01 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDA932234C298000A08B01 /* Formatters.swift */; };
 		C9DA0EA1234CE33D001227A1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA0EA0234CE33D001227A1 /* Configuration.swift */; };
+		C9DA0EA6234CF034001227A1 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA0EA5234CF034001227A1 /* EventDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		C9DA0E9E234CE197001227A1 /* Secrets.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.example.xcconfig; sourceTree = "<group>"; };
 		C9DA0E9F234CE27C001227A1 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		C9DA0EA0234CE33D001227A1 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		C9DA0EA5234CF034001227A1 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				C9659F9A234C02FA0009AA27 /* EventListViewModel.swift */,
 				C9BDA930234C222D00A08B01 /* EventDetailRow.swift */,
 				C9659F9C234C035E0009AA27 /* EventDetailRowViewModel.swift */,
+				C9DA0EA5234CF034001227A1 /* EventDetailView.swift */,
 			);
 			path = EventList;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				C9BDA931234C222D00A08B01 /* EventDetailRow.swift in Sources */,
 				C9659FA1234C116B0009AA27 /* EventError.swift in Sources */,
 				C9659F9B234C02FA0009AA27 /* EventListViewModel.swift in Sources */,
+				C9DA0EA6234CF034001227A1 /* EventDetailView.swift in Sources */,
 				C9DA0EA1234CE33D001227A1 /* Configuration.swift in Sources */,
 				C9659FA3234C119F0009AA27 /* Responses.swift in Sources */,
 				C9659F99234C029D0009AA27 /* EventListView.swift in Sources */,

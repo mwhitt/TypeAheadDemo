@@ -41,7 +41,11 @@ struct EventListView: View {
 
     var listSection: some View {
       Section {
-        ForEach(viewModel.dataSource, content: EventDetailRow.init(viewModel:))
+        ForEach(viewModel.dataSource, id: \.self) { viewModel in
+          NavigationLink(destination: EventDetailView(viewModel: viewModel)) {
+            EventDetailRow(viewModel: viewModel)
+          }.navigationBarTitle(viewModel.title)
+        }
       }
     }
 

@@ -34,3 +34,15 @@ struct EventDetailRowViewModel: Identifiable {
   }
   
 }
+
+// Used to hash on just the day in order to produce a single view model for each
+// day when there are multiple items per each day.
+extension EventDetailRowViewModel: Hashable {
+  static func == (lhs: EventDetailRowViewModel, rhs: EventDetailRowViewModel) -> Bool {
+    return lhs.id == rhs.id
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(self.id)
+  }
+}
