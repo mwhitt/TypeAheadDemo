@@ -66,5 +66,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>SEATGEEK_API_CLIENT_ID</key>
+	<string>$(SEATGEEK_API_CLIENT_ID)</string>
 </dict>
 </plist>

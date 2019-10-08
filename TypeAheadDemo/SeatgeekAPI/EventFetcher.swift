@@ -69,7 +69,7 @@ private extension EventFetcher {
     static let scheme = "https"
     static let host = "api.seatgeek.com"
     static let path = "/2/events"
-    static let key = "<Seatgeek client ID>"
+    static let key: String = try! Configuration.value(for: "SEATGEEK_API_CLIENT_ID")
   }
   
   func makeEventListComponents(
