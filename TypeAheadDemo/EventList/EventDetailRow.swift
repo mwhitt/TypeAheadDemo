@@ -16,10 +16,19 @@ struct EventDetailRow: View {
   }
   
   var body: some View {
-    VStack(alignment: .leading) {
-      Text(viewModel.title).bold().lineLimit(0)
-      Text(viewModel.location).font(.footnote).foregroundColor(.gray)
-      Text(viewModel.date).font(.footnote).foregroundColor(.gray)
+    HStack {
+      Image("eventPlaceholder")
+        .resizable()
+        .frame(width: 60, height: 60, alignment: .center)
+        .aspectRatio(contentMode: .fit)
+        .cornerRadius(10)
+        .padding([.trailing], 10)
+      
+      VStack(alignment: .leading) {
+        Text(viewModel.title).bold().lineLimit(1)
+        Text(viewModel.location).font(.footnote).foregroundColor(.gray).padding([.top, .bottom], 4)
+        Text(viewModel.date).font(.footnote).foregroundColor(.gray)
+      }.padding([.top, .bottom], 10)
     }
   }
 }
