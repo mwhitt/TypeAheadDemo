@@ -8,7 +8,7 @@ Go to http://platform.seatgeek.com/ and register for a dev account. Once you hav
 
 ## Todo
 
-[] Wire up detail view  
-[] Add async loading of remote images  
-[] Add data store to persist favoriting an event  
-[] Add test coverage
+- [ ] Wire up detail view  
+- [ ] Add async loading of remote images  
+- [ ] Add data store to persist favoriting an event  
+- [ ] Add test coverage
