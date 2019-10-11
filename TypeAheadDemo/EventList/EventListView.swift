@@ -35,7 +35,9 @@ struct EventListView: View {
     
     var searchField: some View {
       HStack(alignment: .center) {
-        TextField("Search by team, artist, event or venue", text: $viewModel.filter)
+        TextField("Search by team, artist, event or venue", text: $viewModel.filter) {
+          UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+        }
       }
     }
 
@@ -43,8 +45,8 @@ struct EventListView: View {
       Section {
         ForEach(viewModel.dataSource, id: \.self) { viewModel in
           NavigationLink(destination: EventDetailView(viewModel: viewModel)) {
-            EventDetailRow(viewModel: viewModel)
-          }.navigationBarTitle(viewModel.title)
+            EventRow.init(viewModel: viewModel)
+          }
         }
       }
     }
@@ -55,5 +57,6 @@ struct EventListView: View {
           .foregroundColor(.gray)
       }
     }
+    
 }
 

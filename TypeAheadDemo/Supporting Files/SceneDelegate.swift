@@ -24,9 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
       // Use a UIHostingController as window root view controller
       let window = UIWindow(windowScene: windowScene)
-      window.rootViewController = UIHostingController(rootView: eventListView.onTapGesture {
-        window.endEditing(true)
-      })
+      window.rootViewController = UIHostingController(rootView: eventListView)
       window.makeKeyAndVisible()
       self.window = window
     }

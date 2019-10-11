@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct EventDetailRowViewModel: Identifiable {
+struct EventRowViewModel: Identifiable {
   
   private let event: EventListResponse.Event
   
@@ -37,8 +37,8 @@ struct EventDetailRowViewModel: Identifiable {
 
 // Used to hash on just the day in order to produce a single view model for each
 // day when there are multiple items per each day.
-extension EventDetailRowViewModel: Hashable {
-  static func == (lhs: EventDetailRowViewModel, rhs: EventDetailRowViewModel) -> Bool {
+extension EventRowViewModel: Hashable {
+  static func == (lhs: EventRowViewModel, rhs: EventRowViewModel) -> Bool {
     return lhs.id == rhs.id
   }
 

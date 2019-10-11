@@ -12,15 +12,15 @@ struct EventListResponse: Codable {
   let events: [Event]
   
   struct Event: Codable {
-    let date: Date
-    let title: String
     let id: Int
+    let title: String
+    let date: Date
     let venue: Venue
     
     enum CodingKeys: String, CodingKey {
-      case date = "datetime_local"
-      case title
       case id
+      case title
+      case date = "datetime_local"
       case venue
     }
   }

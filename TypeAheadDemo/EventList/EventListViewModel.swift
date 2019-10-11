@@ -12,7 +12,7 @@ import Combine
 class EventListViewModel: ObservableObject {
   
   @Published var filter: String = ""
-  @Published var dataSource: [EventDetailRowViewModel] = []
+  @Published var dataSource: [EventRowViewModel] = []
   
   private let eventFetcher: EventFetchable
   private var disposables = Set<AnyCancellable>()
@@ -26,10 +26,10 @@ class EventListViewModel: ObservableObject {
     _ = $filter
       .dropFirst(1)
       .debounce(for: .seconds(0.5), scheduler: scheduler)
-      .sink(receiveValue: fetchEvents(usingFilterString:))
+      .sink(receiveValue: fetchEvents(usingFilter:))
   }
   
-  func fetchEvents(usingFilterString filter: String) {
+  func fetchEvents(usingFilter filter: String) {
     guard filter.count > 0 else {
       DispatchQueue.main.async { [weak self] in
         self?.dataSource = []
@@ -37,9 +37,9 @@ class EventListViewModel: ObservableObject {
       return
     }
     
-    eventFetcher.allEvents(usingFilterString: filter)
+    eventFetcher.allEvents(usingFilter: filter)
     .map { response in
-      response.events.map(EventDetailRowViewModel.init)
+      response.events.map(EventRowViewModel.init)
     }
     .receive(on: DispatchQueue.main)
     .sink(

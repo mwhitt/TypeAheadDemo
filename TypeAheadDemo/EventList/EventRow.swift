@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct EventDetailRow: View {
-  private let viewModel: EventDetailRowViewModel
+struct EventRow: View {
+  private let viewModel: EventRowViewModel
   
-  init(viewModel: EventDetailRowViewModel) {
+  init(viewModel: EventRowViewModel) {
     self.viewModel = viewModel
   }
   
-  var body: some View {
+  var body: some View { 
     HStack {
       Image("eventPlaceholder")
         .resizable()

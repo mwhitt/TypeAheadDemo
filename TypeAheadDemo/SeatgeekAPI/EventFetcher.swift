@@ -12,7 +12,7 @@ import Combine
 protocol EventFetchable {
     
   func allEvents(
-    usingFilterString filter: String
+    usingFilter filter: String
   ) -> AnyPublisher<EventListResponse, EventError>
 
   func eventDetails(
@@ -35,8 +35,8 @@ class EventFetcher {
 
 extension EventFetcher: EventFetchable {
     
-  func allEvents(usingFilterString filter: String) -> AnyPublisher<EventListResponse, EventError> {
-    return fetch(with: makeEventListComponents(usingFilterString: filter))
+  func allEvents(usingFilter filter: String) -> AnyPublisher<EventListResponse, EventError> {
+    return fetch(with: makeEventListComponents(usingFilter: filter))
   }
   
   func eventDetails(forID id: String) -> AnyPublisher<EventDetailResponse, EventError> {
@@ -73,7 +73,7 @@ private extension EventFetcher {
   }
   
   func makeEventListComponents(
-    usingFilterString filter: String
+    usingFilter filter: String
   ) -> URLComponents {
     var components = URLComponents()
     components.scheme = SeatgeekAPI.scheme
