@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct EventDetailView: View {
+  
+  @EnvironmentObject var dataStore: FavoritesDataStore
   var viewModel: EventRowViewModel
 
   init(viewModel: EventRowViewModel) {
@@ -41,8 +43,31 @@ struct EventDetailView: View {
           .foregroundColor(.gray)
       }
       .padding([.leading, .trailing], 20)
+      
+      if dataStore.favorites.contains(viewModel.id) {
+        favoriteImage(name: "heart.fill")
+          .foregroundColor(.red)
+          .onTapGesture {
+            var favorites = self.dataStore.favorites
+            favorites.removeAll{$0 == self.viewModel.id}
+            self.dataStore.favorites = favorites
+        }
+      } else {
+        favoriteImage(name: "heart")
+          .onTapGesture {
+            self.dataStore.favorites += [self.viewModel.id]
+        }
+      }
     }
     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
     .navigationBarTitle("", displayMode: .inline)
+  }
+  
+  private func favoriteImage(name: String) -> some View {
+    Image(systemName: name)
+      .resizable()
+      .aspectRatio(contentMode: .fit)
+      .frame(width: 30, height: 30, alignment: .center)
+      .padding([.leading, .top], 20)
   }
 }

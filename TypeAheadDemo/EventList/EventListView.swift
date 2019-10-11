@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct EventListView: View {
+  
+  @EnvironmentObject var dataStore: FavoritesDataStore
   @ObservedObject var viewModel: EventListViewModel
 
     init(viewModel: EventListViewModel) {
@@ -45,7 +47,19 @@ struct EventListView: View {
       Section {
         ForEach(viewModel.dataSource, id: \.self) { viewModel in
           NavigationLink(destination: EventDetailView(viewModel: viewModel)) {
-            EventRow.init(viewModel: viewModel)
+            if self.dataStore.favorites.contains(viewModel.id) {
+              EventRow.init(viewModel: viewModel)
+              .overlay(
+                Image(systemName: "heart.fill")
+                  .frame(width: 20, height: 20)
+                  .padding([.top], 5)
+                  .padding([.leading], -5)
+                  .foregroundColor(.red),
+                alignment: .topLeading
+              )
+            } else {
+              EventRow.init(viewModel: viewModel)
+            }
           }
         }
       }

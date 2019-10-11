@@ -22,6 +22,7 @@
 		C9BDA933234C298000A08B01 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDA932234C298000A08B01 /* Formatters.swift */; };
 		C9DA0EA1234CE33D001227A1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA0EA0234CE33D001227A1 /* Configuration.swift */; };
 		C9DA0EA6234CF034001227A1 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA0EA5234CF034001227A1 /* EventDetailView.swift */; };
+		C9FDD35B2350E4B00028A180 /* FavoritesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FDD35A2350E4B00028A180 /* FavoritesDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		C9DA0E9F234CE27C001227A1 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		C9DA0EA0234CE33D001227A1 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		C9DA0EA5234CF034001227A1 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		C9FDD35A2350E4B00028A180 /* FavoritesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				C9BDA92E234C1F0B00A08B01 /* Parser.swift */,
 				C9BDA932234C298000A08B01 /* Formatters.swift */,
 				C9DA0EA0234CE33D001227A1 /* Configuration.swift */,
+				C9FDD35A2350E4B00028A180 /* FavoritesDataStore.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9659F9F234C04980009AA27 /* EventFetcher.swift in Sources */,
+				C9FDD35B2350E4B00028A180 /* FavoritesDataStore.swift in Sources */,
 				C9659F71234BABE40009AA27 /* AppDelegate.swift in Sources */,
 				C9BDA933234C298000A08B01 /* Formatters.swift in Sources */,
 				C9BDA931234C222D00A08B01 /* EventRow.swift in Sources */,
@@ -351,6 +355,7 @@
 			baseConfigurationReference = C9DA0E9D234CE0AD001227A1 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TypeAheadDemo/TypeAheadDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47BH59G3XX;
 				INFOPLIST_FILE = "TypeAheadDemo/Supporting Files/Info.plist";
@@ -369,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TypeAheadDemo/TypeAheadDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47BH59G3XX;
 				INFOPLIST_FILE = "TypeAheadDemo/Supporting Files/Info.plist";
